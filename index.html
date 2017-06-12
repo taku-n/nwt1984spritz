@@ -14,16 +14,32 @@ html {
 	font-size: 62.5%;
 }
 
+#scripture {
+	width:     40.0rem;
+	height:    20.0rem;
+	font-size:  4.0rem;
+}
+
+#chapter {
+	width:     20.0rem;
+	height:    20.0rem;
+	font-size:  4.0rem;
+}
+
 #go {
 	width:     20.0rem;
 	height:    20.0rem;
 	font-size: 10.0rem;
 }
 
+#time {
+	font-size: 4.0rem;
+}
+
 main {
 	/* display:     flex; */
 	text-align:center;
-	font-size: 10.0rem;
+	font-size: 15.0rem;
 }
 
 p {
@@ -37,7 +53,83 @@ p {
 
 <body>
 
+<form id="form">
+	<select name="scripture" id="scripture">
+		<option value="genesis">Genesis</option>
+		<option value="exodus">Exodus</option>
+		<option value="leviticus">Leviticus</option>
+		<option value="numbers">Numbers</option>
+		<option value="deuteronomy">Deuteronomy</option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+		<option value=""></option>
+	</select>
+	<select name="chapter" id="chapter">
+		<option value="hoge">hoge</option>
+		<option value="fuga">fuga</option>
+		<option value="piyo">piyo</option>
+	</select>
+</form>
 <button id="go" type="button" onclick="main()">Go</button>
+<p><div id="time"></div></p>
 <main id="main">hoge</main>
 
 <script src="index.js"></script>
