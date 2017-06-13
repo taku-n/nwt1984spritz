@@ -1,5 +1,5 @@
 /* setting */
-const MSEC = 300;
+const MSEC = 200;
 
 const object = {
 	  'genesis':         50
