@@ -1,3 +1,6 @@
+/* settings */
+const MSEC = 300;
+
 const object = {
 	  genesis:     50
 	, exodus:      40
@@ -25,6 +28,23 @@ document.getElementById('form').scripture.onchange = () => {
 	}
 };
 
+const getTime = (array, msec) => {
+	const timeMS = array.length * msec;
+	const timeS  = timeMS / 1000;
+	const timeM  = timeS / 60;
+
+	return Math.ceil(timeM) + 'min';
+};
+
+document.getElementById('form').chapter.onchange = async () => {
+	const fileName = getFileName();
+	const response0 = await fetch(fileName);
+	const response1 = await response0.text();
+	const response2 = await promiseLinesToArray(response1);
+
+	document.getElementById('time').textContent = getTime(response2, MSEC);
+};
+
 const getFileName = () => {
 	const scripture = document.getElementById('form').scripture.value;
 	const chapter   = document.getElementById('form').chapter.value;
@@ -49,22 +69,17 @@ const promiseSleep = msec => new Promise(resolve => setTimeout(resolve, msec));
 
 const promiseShowArrayInOrder = async (array) => {
 	const promise = new Promise(async (resolve, reject) => {
-		const msec     = 300;
-		const length   = array.length;
-		const timeMSec = length * msec;
-		const timeSec  = timeMSec / 1000;
-		const timeMin  = timeSec / 60;
 
-		document.getElementById('time').textContent = timeMin;
+		document.getElementById('time').textContent = getTime(array, MSEC);
 
 		for (let element of array) {
 			document.getElementById('main').textContent = element;
 			if (element == '。')
-				await promiseSleep(msec * 5);
+				await promiseSleep(MSEC * 5);
 			else if (element == '，')
-				await promiseSleep(msec * 3);
+				await promiseSleep(MSEC * 3);
 			else
-				await promiseSleep(msec);
+				await promiseSleep(MSEC);
 		}
 	});
 
