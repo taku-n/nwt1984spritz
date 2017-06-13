@@ -18,6 +18,11 @@ html {
 	font-size: 4.0rem;
 }
 
+#checkbox {
+	width:     20.0rem;
+	font-size: 4.0rem;
+}
+
 #scripture {
 	width:     40.0rem;
 	height:    20.0rem;
@@ -60,6 +65,12 @@ p {
 <p><div id="last"></div></p>
 
 <form id="form">
+	<label>
+		<input id="checkbox" type="checkbox"
+		    name="checkbox" value="recording" checked>
+			Recording
+		</input>
+	</label>
 	<select name="scripture" id="scripture">
 		<option value="genesis">Genesis</option>
 		<option value="exodus">Exodus</option>

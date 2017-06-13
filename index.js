@@ -160,7 +160,8 @@ const promiseShowArrayInOrder = async (array) => {
 const main = async () => {
 	const fileName = getFileName();
 
-	storage.setItem('last', fileName);
+	if (document.forms.form.checkbox.checked)
+		storage.setItem('last', fileName);
 
 	const response0 = await fetch(fileName);
 	const response1 = await response0.text();
